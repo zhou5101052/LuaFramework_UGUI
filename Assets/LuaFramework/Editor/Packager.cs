@@ -36,7 +36,7 @@ public class Packager {
 #if UNITY_5
         target = BuildTarget.iOS;
 #else
-        target = BuildTarget.iPhone;
+        target = BuildTarget.iOS;
 #endif
         BuildAssetResource(target);
     }
@@ -50,6 +50,11 @@ public class Packager {
     public static void BuildWindowsResource() {
         BuildAssetResource(BuildTarget.StandaloneWindows);
     }
+
+	[MenuItem("LuaFramework/Build OSX Resource", false, 103)]
+	public static void BuildOSXResource() {
+		BuildAssetResource(BuildTarget.StandaloneOSX);
+	}
 
     /// <summary>
     /// 生成绑定素材
